@@ -1,0 +1,13 @@
+sudo apt-get remove golang-go
+sudo apt-get remove --auto-remove golang-go
+sudo rm -rvf /usr/local/go
+wget https://go.dev/dl/go1.17.5.linux-amd64.tar.gz
+tar -C /usr/local -xzvf go1.17.5.linux-amd64.tar.gz
+sudo mv go /usr/local
+mkdir $HOME/go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOROOT/bin:$GOBIN:$PATH
+source ~/.profile
+go version

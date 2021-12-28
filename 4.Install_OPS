@@ -1,0 +1,20 @@
+#install QEMU
+sudo apt-get install qemu-kvm qemu-utils
+
+
+#install Make
+sudo apt-get install build-essential
+make --version
+
+#install Git
+#sudo apt-get update
+#sudo apt-get install git
+#git version
+
+#install OPS
+#git clone http://github.com/nanovms/ops $GOPATH/src/github.com/nanovms/ops
+#cd $GOPATH/src/github.com/nanovms/ops
+#make deps
+#make build
+cd $GOPATH/src/github.com/nanovms/ops
+mv ops /bin
