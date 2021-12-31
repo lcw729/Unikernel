@@ -1,5 +1,5 @@
 swapoff -a
-kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU --v=4 --cri-socket /var/run/crio/crio.sock 
+kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU --v=4 
 
 mkdir -p $HOME/.kube
 cp /etc/kubernetes/admin.conf $HOME/.kube/config
