@@ -10,4 +10,5 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOBIN:$PATH
 source ~/.profile
+cp /usr/local/go/bin/go /usr/bin/go
 go version
