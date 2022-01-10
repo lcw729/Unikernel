@@ -1,0 +1,17 @@
+apiVersion: kubevirt.io/v1alpha2
+kind: VirtualMachine
+metadata:
+  labels:
+    kubevirt.io/vm: testvm1
+  name: testvm1
+spec:
+  dataVolumeTemplates:
+    - metadata:
+        name: centos7-dv
+      spec:
+        pvc:
+          accesccModes:
+            - ReadWriteOnce
+          resources:
+            request:
+  

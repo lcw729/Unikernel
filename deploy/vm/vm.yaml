@@ -13,6 +13,9 @@ spec:
       domain:
         devices:
           disks:
+            - disk:
+                bus: virtio
+              name: disk0
             - name: containerdisk
               disk:
                 bus: virtio
@@ -29,6 +32,9 @@ spec:
       - name: default
         pod: {}
       volumes:
+        - name: disk0
+          persistentVolumeClaim:
+            claimName: fedora2
         - name: containerdisk
           containerDisk:
             image: quay.io/kubevirt/cirros-container-disk-demo
