@@ -1,6 +1,6 @@
-export KUBEVIRT_VERSION=$(curl -s https://api.github.com/repos/kubevirt/kubevirt/releases | grep tag_name | grep -v -- - | sort -V | tail -1 | awk -F':' '{print $2}' | sed 's/,//' | xargs)
- 
-echo $KUBEVIRT_VERSION
+export KV=v0.25.0
 
-kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/kubevirt-operator.yaml
-kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/kubevirt-cr.yaml
+kubectl create namespace kubevirt
+kubectl create configmap -n kubevirt kubevirt-config  --from-literal debug.useEmulation=true --from-literal feature-gates="LiveMigration"
+kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/$KV/kubevirt-operator.yaml
+kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/$KV/kubevirt-cr.yaml
