@@ -1,4 +1,4 @@
-apiVersion: kubevirt.io/v1
+apiVersion: kubevirt.io/v1alpha3
 kind: VirtualMachine
 metadata:
   creationTimestamp: 2018-07-04T15:03:08Z
@@ -42,5 +42,5 @@ spec:
             ssh_pwauth: True
             disable_root: false
             ssh_authorized_keys:
-            - ssh-rsa: 
+            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnh4gpeRX06zlHLOATeitL6HAUJzB+Pha8zhfZjuntR68d4DvmgEiczughDfHu2GHzcN7NztQUeFYkWmU0KBolQzy/q4pivtAq1wyRPJ12A2Xn7xa1q0nTYsPVD1bGPVouIxIsViZ7Gc0tn/ftWGu3wYfY8lNQHPDxYnSUXTMRi/pJNAiW6hTfste9c/0n23hA/S8g1PGJ2XheAIMy/aOQys3MU1v0ThMr3Ju7+FKVQUPD2p8Ee5RX7nZjffPskVr3TjO3GqQqIKG5R6YhhGwmeiOYWkvfTa526fPpzUS95SuWf5dlNMBm8lGJWC596XlYvMFBYfi+HKTsQ89cEpRN root@unikernel-master
         name: cloudinitdisk

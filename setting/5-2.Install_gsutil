@@ -1,5 +1,0 @@
-wget https://storage.googleapis.com/pub/gsutil.tar.gz
-tar xfz gsutil.tar.gz -C $HOME
-cd $HOME
-export PATH=${PATH}:$HOME/gsutil
-cp -r /root/gsutil/* /usr/bin/
