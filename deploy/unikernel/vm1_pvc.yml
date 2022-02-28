@@ -21,6 +21,9 @@ spec:
           disks:
           - disk:
               bus: virtio
+            name: nfs
+          - disk:
+              bus: virtio
             name: disk0
           - cdrom:
               bus: sata
@@ -35,6 +38,9 @@ spec:
       - name: disk0
         persistentVolumeClaim:
           claimName: fedora
+      - name: nfs
+        persistentVolumeClaim:
+          claimName: nfs
       - cloudInitNoCloud:
           userData: |
             #cloud-config
