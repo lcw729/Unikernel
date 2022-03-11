@@ -5,5 +5,5 @@
 
 
 ## Reference
-[kubevirt-examples](https://github.com/mjschmidt/kubevirt-examples)
-[Cloud config examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
+- [kubevirt-examples](https://github.com/mjschmidt/kubevirt-examples)
+- [Cloud config examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
