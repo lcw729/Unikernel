@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vm1-svc
+spec:
+  selector:
+    app: cluster-manager
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 2200

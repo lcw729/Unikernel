@@ -20,9 +20,6 @@ spec:
         devices:
           disks:
           - disk:
-             
-            
-          - disk:
               bus: virtio
             name: disk0
           - cdrom:

@@ -5,6 +5,7 @@ metadata:
   labels:
     app: containerized-data-importer 
 spec:
+  storageClassName: hostpath
   capacity:
     storage: 10Gi
   accessModes:

@@ -1,0 +1,44 @@
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachineInstance
+metadata:
+  creationTimestamp: 2018-07-04T15:03:08Z
+  generation: 1
+  labels:
+    kubevirt.io/os: linux
+  name: vm1
+spec:
+  domain:
+    cpu:
+      cores: 2
+    devices:
+      disks:
+      - type: PersistentVolumeClaim
+        source:
+          name: nfs
+      - disk:
+          bus: virtio
+        name: nfs
+      - disk:
+          bus: virtio
+        name: disk0
+      - cdrom:
+          bus: sata
+          readonly: true
+        name: cloudinitdisk
+    machine:
+      type: q35
+    resources:
+      requests:
+        memory: 1024M
+  volumes:
+  - name: disk0
+    persistentVolumeClaim:
+      claimName: fedora
+  - name: nfs
+    persistentVolumeClaim:
+      claimName: nfs
+  - cloudInitNoCloud:
+      userData: |
+        ssh_authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnh4gpeRX06zlHLOATeitL6HAUJzB+Pha8zhfZjuntR68d4DvmgEiczughDfHu2GHzcN7NztQUeFYkWmU0KBolQzy/q4pivtAq1wyRPJ12A2Xn7xa1q0nTYsPVD1bGPVouIxIsViZ7Gc0tn/ftWGu3wYfY8lNQHPDxYnSUXTMRi/pJNAiW6hTfste9c/0n23hA/S8g1PGJ2XheAIMy/aOQys3MU1v0ThMr3Ju7+FKVQUPD2p8Ee5RX7nZjffPskVr3TjO3GqQqIKG5R6YhhGwmeiOYWkvfTa526fPpzUS95SuWf5dlNMBm8lGJWC596XlYvMFBYfi+HKTsQ89cEpRN root@unikernel-master
+    name: cloudinitdisk

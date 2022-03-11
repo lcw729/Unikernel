@@ -5,10 +5,11 @@ metadata:
   labels:
     app: containerized-data-importer
   annotations:
-    cdi.kubevirt.io/storage.import.endpoint: "https://storage.googleapis.com/lcw-bucket/main.img.xz"
+    cdi.kubevirt.io/storage.import.endpoint: "https://storage.googleapis.com/lcw-bucket/goweb.img.xz"
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
       storage: 4Gi
+  storageClassName: hostpath
